@@ -23,9 +23,10 @@
         var nome = prompt('Qual é o seu nome?')
         var idade = Number.parseInt(prompt('Qual é a sua idade?'))
         var sx = prompt('Qual é o seu sexo?')
-        document.write(`Olá, ${nome}, bem-vindo ao nosso programa. Sua idade é de ${idade} anos, sendo do sexo ${sx}. `)
-
-        //Parte 2 de letras maisculas, minusculas e quantidade de caracteres
+        document.write(`Olá, ${nome}, bem-vindo ao nosso programa. Sua idade é de ${idade} anos, sendo do sexo ${sx}. <br>`)
+        document.write(`Seu nome possui ${nome.length} letras. <br>`)
+        document.write(`Seu nome em Maiúsculas: ${nome.toUpperCase()} <br>`)
+        document.write(`Seu nome em letras Minúsculas: ${nome.toLowerCase()}`)
     </script>
 </body>
 </html>
