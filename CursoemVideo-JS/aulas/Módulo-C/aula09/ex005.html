@@ -16,10 +16,20 @@
     <h1>Iniciando Estudos com o DOOM</h1>
     <p>Aqui vai o resultado</p>
     <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript</p>
-    <div>Clique em mim</div>
+    <div id="msg">Clique em mim</div>
 
     <script>
-        window.document.write(document.URL)
+        var p1 = window.document.getElementsByTagName('p')[1]
+        window.document.write('Está escrito assim: ' + p1.innerHTML)
+        /*
+        var d = document.getElementByName('msg')
+        p1.style.color = 'black'
+        d.style.background = 'green'
+        d.innetText = 'Estou aguardando...'
+        */
+       var d = document.querySelector('div#msg')
+       d.style.color = 'red'
+       d.style.background = 'black'
     </script>
 </body>
 </html>

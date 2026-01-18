@@ -3,9 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>DOOM</title>
 </head>
 <body>
-    
+    <header id="cabeça">
+        <h1>Título Foda</h1>
+        <nav>
+            <ul>
+                <a href="#">Home</a>
+                <a href="#">Notícias</a>
+                <a href="#">Pesquisar</a>
+                <a href="#">Sobre nós</a>
+                <a href="#">Contato</a>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article id="corpo">
+            <h2 class="subtitulo">Conteúdo Foda</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, pariatur eaque veniam officiis deleniti at ex, officia alias enim sapiente explicabo magnam! Quaerat enim commodi neque aperiam quos molestiae ipsam. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia nesciunt autem repellendus doloremque, vero consequatur quo illo est consectetur perferendis. Excepturi ipsam id aliquam qui magnam. Excepturi cum vero beatae.</p>
+        </article>
+    </main>
+
+    <script>
+        var C = document.querySelector('header#cabeça')
+        C.style.background = 'gray'
+        var subt = document.getElementsByClassName('subtitulo')[0]
+        subt.style.background = 'red'
+    </script>
 </body>
 </html>
