@@ -13,18 +13,31 @@
         input#num1, input#num2 {
             color: black;
             margin-top: 20px;
+            border-radius: 5px;
         }
 
         #res {
+            background-color: #24bb22;
+            color: white;
             height: 50px;
             width: 80px;
             transition: .5s;
+            border-radius: 8px;
+            border: none;
+            font-weight: bold;
+            margin-top: 15px;
+            box-shadow: 3px 3px 4px 0px #0000008c;
         }
 
         input#res:hover {
             height: 70px;
             width: 90px;
             transition: .5s;
+        }
+
+        p, label {
+            font-size: 1.2em;
+            text-shadow: 1px 1px 1px black;
         }
     </style>
 </head>
@@ -42,6 +55,7 @@
             <input type="number" name="num2" id="num2">
             <br>
             <input type="button" value="Somar" id="res">
+            <p id="resul">Resultado: </p>
         </fieldset>
     </form>
 
