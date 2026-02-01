@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Verificação de Nacionalidade</title>
+</head>
+<body>
+    <h1>Verificação Internacional de Nacionalidade Atual (VINA)</h1>
+    
+    <main>
+        <div>
+            <label for="txtpa">Em qual país você vive?</label>
+            <input type="text" name="txtpa" id="txtpa">
+            <br>
+            <input type="submit" value="Verificar" onclick="verif()">
+            <div id="atual"></div>
+            <div id="res"></div>
+        </div>
+    </main>
+
+    <script>
+        function verif() {
+            var país = document.getElementById('txtpa')
+            var atual = document.getElementById('atual')
+            var r = document.querySelector('div#res')
+            atual.innerHTML = `Vivendo em ${país}`
+
+            if (país == "BR") {
+                document.writeln('Você é brasileiro!')
+            } else {
+                document.writeln('Você é Estrangeiro!')
+            }
+        }
+    </script>
+</body>
+</html>
