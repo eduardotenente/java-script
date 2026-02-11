@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Maioridade</title>
+</head>
+<body>
+    <h1>Verificação de Idade</h1>
+    <article>
+        <label for="txt1">Qual é sua idade?</label>
+        <input type="number" name="txt1" id="txt1">
+        <input type="button" value="Enviar" id="env" onclick="clicar()">
+        <div id="r">Resultado...</div>
+    </article>
+
+    <script>
+        function clicar() {
+            var Idad = document.querySelector('input#txt1')
+            var res = document.querySelector('input#env')
+            var exibir = document.querySelector('div#r')
+            var I = Number(Idad.value)
+            if (I < 18) {
+                exibir.innerText = 'Você é menor de idade!'
+            } else {
+                if (I >= 18) {
+                    exibir.innerText = 'Você é maior de idade!'
+                }
+            }
+        }
+    </script>
+
+    <!-- Crie um campo de input para idade. Ao clicar em um botão, mostre no DOM se a pessoa é maior ou menor de idade. -->
+</body>
+</html>
+
