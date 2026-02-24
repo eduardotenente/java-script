@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação de Maioridade</title>
+    <style>
+        body {
+            background: #0F0F1A url(GIF/gifzao.gif) no-repeat left center fixed;
+            color: white;
+            text-align: center;
+            text-shadow: 1px 1px 1px black;
+        }
+
+        div#container {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        fieldset {
+            border-radius: 5px;
+            box-shadow: 2px 1px 15px rgba(0, 0, 0, 0.438);
+        }
+
+        input[type=button] {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            font-weight: bold;
+            box-shadow: 2px 1px 15px rgba(0, 0, 0, 0.411);
+            cursor: pointer;
+            transition: .5s;
+        }
+
+        input[type=button]:hover {
+            padding: 15px;
+            transition: .5s;
+        }
+
+        p {
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <h1>INFORME SUA IDADE PARA COTINUAR!</h1>
+    <div id="container">
+        <fieldset>
+            <p>
+                <label for="idade">Qual é sua idade? </label>
+                <input type="number" name="idade" id="idade" min="1" max="100">
+            </p>
+            <p>
+                <input type="button" value="Verificar" onclick="verificar()">
+            </p>
+            <div id="res">
+                <p>Resultado...</p>
+            </div>
+        </fieldset>
+    </div>
+
+
+    <script>
+        function verificar() {
+            var idade = document.getElementById('idade')
+            
+            if (idade.value.length == 0 || Number(idade.value) > 100 || Number(idade.value) < 0) {
+                alert('[ERRO] Verifique seus dados e tente novamente!')
+            } else {
+                var res = document.querySelector('div#res')
+                if (Number(idade.value) >= 18) {
+                    res.innerHTML = 'Você possui maioridade! Agora vai trabalhar...'
+                } else {
+                    res.innerHTML = 'Você é menor de idade, volta para o teu roblox / FF.'
+                }
+            }
+        }
+    </script>
+</body>
+</html>
