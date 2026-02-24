@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média do Aluno</title>
+    <style>
+        body {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: gray;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        main {
+            position: absolute;
+            left: 29%;
+            top: 15%;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.774);
+            background-color: rgba(255, 255, 255, 0.301);
+            width: 300px;
+        }
+
+        div#container {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div#res {
+            padding: 10px;
+            text-align: center;
+        }
+
+        p {
+            font-size: 1.1em;
+        }
+
+        input[type=button] {
+            font-weight: bold;
+            padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.671);
+            border-radius: 5px;
+            transition: .5s;
+        }
+
+        input[type=button]:hover {
+            padding: 15px;
+            transition: .5s;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora de Média</h1>
+
+    <main>
+        <div id="container">
+            <p>
+                <label for="n1">Primeira Nota: </label>
+                <input type="number" name="n1" id="n1" min="0" max="10">
+            </p>
+            <p>
+                <label for="n2">Segunda Nota:</label>
+                <input type="number" name="n2" id="n2" min="0" max="10">
+            </p>
+            <p>
+                <input type="button" value="Calcular" onclick="calcular()">
+            </p>
+            <div id="res">
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function calcular() {
+            var pn = document.querySelector('input#n1')
+            var sn = document.querySelector('input#n2')
+            var res = document.getElementById('res')
+            var ntermos = 2
+            var Média = (Number(pn.value) + Number(sn.value)) / ntermos
+            
+            if (pn.value.length == 0 || sn.value.length == 0 || Number(pn.value) > 10 || Number(pn.value) < 0 || Number(sn.value) > 10 || Number(sn.value) < 0) {
+                alert('[ERRO] Por favor, verifique seus dados e tente novamente.')
+            } else {
+                if (Média >= 0 && Média < 5) {
+                    res.innerHTML = `Sua média é ${Média}, está REPROVADO!`
+                } else if (Média >= 5 && Média < 7) {
+                    res.innerHTML = `Sua média é ${Média}, está em RECUPERAÇÃO!`
+                } else if (Média >= 7 && Média <= 10) {
+                    res.innerHTML = `Sua média é ${Média}, está APROVADO, parabéns!`
+                }
+            }
+        }
+    </script>
+</body>
+</html>
