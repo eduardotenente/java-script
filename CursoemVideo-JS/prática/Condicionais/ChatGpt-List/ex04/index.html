@@ -17,10 +17,14 @@
             text-align: center;
         }
 
-        main {
+        section {
             position: absolute;
-            left: 29%;
-            top: 15%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -80%);
+        }
+
+        main {
             border-radius: 10px;
             border: 1px solid rgba(255, 255, 255, 0.774);
             background-color: rgba(255, 255, 255, 0.301);
@@ -60,23 +64,25 @@
 <body>
     <h1>Calculadora de Média</h1>
 
-    <main>
-        <div id="container">
-            <p>
-                <label for="n1">Primeira Nota: </label>
-                <input type="number" name="n1" id="n1" min="0" max="10">
-            </p>
-            <p>
-                <label for="n2">Segunda Nota:</label>
-                <input type="number" name="n2" id="n2" min="0" max="10">
-            </p>
-            <p>
-                <input type="button" value="Calcular" onclick="calcular()">
-            </p>
-            <div id="res">
+    <section>
+        <main>
+            <div id="container">
+                <p>
+                    <label for="n1">Primeira Nota: </label>
+                    <input type="number" name="n1" id="n1" min="0" max="10">
+                </p>
+                <p>
+                    <label for="n2">Segunda Nota:</label>
+                    <input type="number" name="n2" id="n2" min="0" max="10">
+                </p>
+                <p>
+                    <input type="button" value="Calcular" onclick="calcular()">
+                </p>
+                <div id="res">
+                </div>
             </div>
-        </div>
-    </main>
+        </main>
+    </section>
 
     <script>
         function calcular() {
