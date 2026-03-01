@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+    <style>
+        div#res {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: column nowrap;
+            margin: auto;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body style="background-color: rgb(92, 92, 92); color: white; text-align: center;">
+    <h1>Tabuada</h1>
+    <label for="valor">Tabuada de qual número?</label>
+    <input type="number" name="valor" id="valor">
+    <input type="button" value="Calcular" onclick="tabuada()">
+    <div id="res">A tabuada será exibida aqui... <br></div>
+
+    <script src="tabuada.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qual é a senha</title>
+    <style>
+        input[type=button] {
+            padding: 10px;
+            transition: .5s;
+        }
+
+        input[type=button]:hover {
+            padding: 15px;
+            transition: .5s;
+        } 
+    </style>
+</head>
+<body>
+    <h1>Qual é a senha?</h1>
+    <input type="button" value="Entrar" onclick="verificar()">
+    <div id="res"></div>
+
+    <script>
+        /* Crie um programa que peça a senha ao usuário e continue pedindo enquanto a senha digitada for diferente de "1234". Utilize do...while */
+
+        var res = document.querySelector('div#res')
+        function verificar() {
+            var senha = document.createElement('input:number')
+            senha.setAttribute('id','senha')
+            do {
+                
+            } while (senha != 1234)
+        res.innerHTML = 'Senha Correta!'
+        }
+    </script>
+</body>
+</html>
