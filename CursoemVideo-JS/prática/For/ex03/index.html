@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informações</title>
+    <style>
+        body {
+            background-color: gray;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        input {
+            border: none;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Responda as perguntas abaixo!</h1>
+    <main>
+        <label for="idade">Qual é sua idade?</label>
+        <br>
+        <input type="number" name="idade" id="idade">
+        <br>
+        <label for="sx">Qual é seu sexo? [M/F]</label>
+        <br>
+        <input type="text" name="sx" id="sx">
+        <input type="button" value="Enviar" onclick="verificar">
+    </main>
+    <div id="res"></div>
+    
+    <script src="idade-sexo.js"></script>
+</body>
+</html>
