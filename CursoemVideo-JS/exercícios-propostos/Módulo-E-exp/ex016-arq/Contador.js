@@ -4,15 +4,17 @@ function Contagem() {
     var passo = document.querySelector('input#passo')
     var res = document.querySelector('div#res')
 
-    if (inicio.length.value == 0 || fim.length.value == 0) {
+    if (inicio.value.length == 0 || fim.value.length == 0) {
         alert('Campos vazios! Tente Novamente.')
     } else if (passo.length.value == 0) {
-        var soma = Number(inicio.value) + 1
-        res.innerHTML = ``
+        while (Number(inicio.value) <= Number(fim.value)) {
+            var soma = Number(inicio.value) + 1
+            res.innerText += `--> ${soma}`
+        }
     } else {
             while (Number(inicio.value) <= Number(fim.value)) {
                 var soma = Number(inicio.value) + Number(passo.value)
-                res.innerHTML = ``
+                res.innerText += `--> ${soma}`
         }
     }
 }
