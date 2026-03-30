@@ -11,10 +11,10 @@ function Contagem() {
             var soma = Number(inicio.value) + 1
             res.innerText += `--> ${soma}`
         }
-    } else {
+    } else if (Number(passo.value) >= 1) {
             while (Number(inicio.value) <= Number(fim.value)) {
                 var soma = Number(inicio.value) + Number(passo.value)
-                res.innerText += `--> ${soma}`
+                res.innerText += `--> ${soma}` 
         }
     }
 }
