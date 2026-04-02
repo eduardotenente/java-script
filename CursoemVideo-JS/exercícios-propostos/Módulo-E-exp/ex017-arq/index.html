@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Tabuada</title>
+</head>
+<body>
+    <h1>Tabuada</h1>
+    <main>
+        <div id="botoes">
+            <label for="Num">Número: </label>
+            <input type="number" name="Num" id="Num">
+            <br>
+            <input type="button" value="Gerar Tabuada" onclick="Tabuada()">
+        </div>
+        <div id="Resposta">
+            Digite um número acima
+            <br>
+        </div>
+    </main>
+
+    <script>
+        function Tabuada() {
+            let num = document.getElementById('Num')
+            let res = document.getElementById('Resposta')
+            if (num.value.length == 0) {
+                alert('[ERRO] Digite um número!')
+            } else {
+                let n = Number(num.value)
+                for(let c = 1; c <= 10; c++) {
+                    let mult = n * c
+                    res.innerHTML += `${n} x ${c} = ${mult} <br>`
+                }
+            }
+        }
+    </script>
+</body>
+</html>

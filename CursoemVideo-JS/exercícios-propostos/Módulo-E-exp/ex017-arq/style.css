@@ -1,0 +1,83 @@
+@charset "UTF-8";
+
+@keyframes gradient {
+    from {
+        background-position: 0 50%;
+    }
+
+    to {
+        background-position: 100% 50%;
+    }
+}
+
+body {
+    animation: gradient 5s ease alternate infinite;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab) no-repeat;
+    background-size: 300% 300%;
+    font-family: sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+h1 {
+    color: white;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.486);
+}
+
+main {
+    background-color: rgba(255, 255, 255, 0.205);
+    width: 400px;
+    height: 270px;
+    border-radius: 10px;
+    border: 1px solid white;
+}
+
+label {
+    color: white;
+}
+
+input {
+    border-radius: 5px;
+    border: none;
+}
+
+input[type=button] {
+    background-color: #e73c7e;
+    margin-top: 3%;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+input[type=button]:hover {
+    background: linear-gradient(-20deg, #ee7752, #e73c7e, #23a6d5, #23d5ab) no-repeat;
+    background-size: 300% 300%;
+    border: 1px solid white;
+    animation: gradient 2s ease alternate infinite;
+}
+
+div {
+    margin-top: 5%;
+    text-align: center;
+}
+
+div#Resposta {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    overflow: scroll;
+    
+    background-color: rgba(255, 255, 255, 0.205);
+    color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    height: 140px;
+    width: 200px;
+    margin-left: 3%;
+}
