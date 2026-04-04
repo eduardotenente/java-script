@@ -15,10 +15,9 @@
             <br>
             <input type="button" value="Gerar Tabuada" onclick="Tabuada()">
         </div>
-        <div id="Resposta">
-            Digite um número acima
-            <br>
-        </div>
+        <select name="tabuada" id="Resposta" size="10">
+            <option>Digite um número acima</option>
+        </select>
     </main>
 
     <script>
@@ -29,9 +28,13 @@
                 alert('[ERRO] Digite um número!')
             } else {
                 let n = Number(num.value)
+                res.innerHTML = ''
                 for(let c = 1; c <= 10; c++) {
                     let mult = n * c
-                    res.innerHTML += `${n} x ${c} = ${mult} <br>`
+                    let item = document.createElement('option')
+                    item.text = `${n} x ${c} = ${mult}`
+                    item.value = `res{c}`
+                    res.appendChild(item)
                 }
             }
         }

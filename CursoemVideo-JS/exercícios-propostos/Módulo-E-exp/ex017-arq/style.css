@@ -12,7 +12,7 @@
 
 body {
     animation: gradient 5s ease alternate infinite;
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab) no-repeat;
+    background: linear-gradient(-120deg, #ee7752, #e73c7e, #23a6d5, #23d5ab) no-repeat;
     background-size: 300% 300%;
     font-family: sans-serif;
     height: 100vh;
@@ -67,10 +67,11 @@ div {
     text-align: center;
 }
 
-div#Resposta {
+select#Resposta {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+    justify-content: center;
     overflow: scroll;
     
     background-color: rgba(255, 255, 255, 0.205);
@@ -79,5 +80,6 @@ div#Resposta {
     border-radius: 10px;
     height: 140px;
     width: 200px;
+    margin-top: 5%;
     margin-left: 3%;
 }
