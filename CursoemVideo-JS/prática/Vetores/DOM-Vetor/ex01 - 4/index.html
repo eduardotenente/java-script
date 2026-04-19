@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetor 1 - 4</title>
+    <style>
+        body {
+            background-color: gray;
+            color: white;
+            font-family: sans-serif;
+            font-size: 1.5em;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 100vh;
+        }
+
+        div {
+            padding: 10px;
+            border: 2px solid wheat;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.24);
+        }
+
+        #resultado-num {
+            margin-bottom: 5%;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        2. Crie um vetor com 4 nomes e exiba o primeiro e o último elemento. 
+        3. Crie um vetor com 5 números e exiba os elementos um por um usando um loop.
+        4. Crie um vetor com 5 nomes e exiba cada nome junto com sua posição. 
+    -->
+    <div id="resultado-num"></div>
+    <div id="resultado-nome"></div>
+
+    <script>
+        var nome = ['Eduardo', 'Luka', 'Nicolly', 'Emilly', 'Max']
+        var num = [5, 8, 0, 7, 43]
+        var resnum = document.getElementById('resultado-num')
+        var resnome = document.getElementById('resultado-nome')
+        var c = 1
+
+        for(let pos in num) {
+            resnum.innerHTML += `${c}º - ${num[pos]} |  `
+            c++
+        }
+
+        var c = 1
+        for(let pos in nome) {
+            resnome.innerHTML += `${c}º - ${nome[pos]} | `
+            c++
+        }
+        resnome.innerHTML += `<br> Primeiro Elemento: ${nome[0]} <br> 
+        Último Elemento: ${nome[4]}`
+    </script>
+</body>
+</html>
