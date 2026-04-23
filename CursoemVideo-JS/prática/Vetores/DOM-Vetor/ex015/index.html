@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impar</title>
+    <style>
+        body {
+            background-color: gray;
+            color: white;
+            font-family: sans-serif;
+            display: grid;
+            place-items: center;
+            height: 30vh;
+        }
+    </style>
+</head>
+<body>
+<!-- Exiba apenas números ímpares em uma lista. -->
+    <h1>Impares!</h1>
+    <ul id="lista">
+        <h2 id="valores">Valores: </h2>
+    </ul>
+
+    <script>
+        var valores = document.getElementById('valores')
+        var lista = document.getElementById('lista')
+        var vetor = [23, 92, 100, 0, 2, 5]
+        var c = 1
+
+        valores.innerHTML += `${vetor}`
+        for(let pos in vetor) {
+            if (vetor[pos] % 2 == 1) {
+                lista.innerHTML += `<li>${c}º posição - ${vetor[pos]} </li>`
+            }
+            c++
+        }
+    </script>
+</body>
+</html>
