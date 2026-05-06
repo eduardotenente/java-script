@@ -1,25 +1,28 @@
-function Adicionar() {
-    var num = [document.getElementById('numtxt')]
-    var resvalor = document.getElementById('resvalor')
-    var c = 1
-    var maior = 0
-    var menor = Infinity()
-    var media = 0
-    var soma = 0
+let num = document.getElementById('fnum')
+let lista = document.getElementById('resvalor')
+let res = document.querySelector('div#res')
+let valores = []
 
-    if (num.length == 0) {
-        alert('Campo Vazio!')
+function isNumero(n) {
+    if(Number(n) >= 1 && Number(n) <= 100) {
+        return true
     } else {
-        resvalor.innerHTML += `Valor ${num} adicionado`
-        c++
+        return false
     }
 }
 
-function Finalizar() {
-    var res = document.querySelector('div#res')
-    res.innerHTML = `Ao todo, temos ${c} números cadastrados.`
-    res.innerHTML += `O maior valor informado foi ${maior}.`
-    res.innerHTML += `O menor valor informado foi ${menor}.`
-    res.innerHTML += `Somando todos os valores, temos ${soma}.`
-    res.innerHTML += `A média dos valores digitados é ${media}.`
+function isLista(n, l) {
+    if(l.indexOf(Number(n)) != -1) {
+        return true
+    } else {
+        return false
+    }
+}
+
+function Adicionar() {
+    if (isNumero(num.value) && !isLista(num.value, valores)) {
+        
+    } else {
+        alert('Valor Inválido ou já encontrado na lista!')
+    }
 }
