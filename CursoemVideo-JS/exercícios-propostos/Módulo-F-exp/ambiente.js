@@ -1,5 +1,5 @@
 let num = document.getElementById('fnum')
-let lista = document.getElementById('resvalor')
+var lista = document.getElementById('resvalor')
 let res = document.querySelector('div#res')
 let valores = []
 
@@ -33,6 +33,7 @@ function Adicionar() {
             let menor = num.value
         }
         var soma = soma.value + num.value
+        let valores = [num]
         lista.innerHTML += `valor ${num} adicionado`
     } else {
         alert('Valor Inválido ou já encontrado na lista!')
