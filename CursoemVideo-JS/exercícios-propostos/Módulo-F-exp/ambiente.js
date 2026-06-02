@@ -1,7 +1,7 @@
-let num = document.getElementById('fnum')
+var num = document.getElementById('fnum')
 var lista = document.getElementById('resvalor')
 let res = document.querySelector('div#res')
-let valores = []
+let valores = [num]
 
 function isNumero(n) {
     if(Number(n) >= 1 && Number(n) <= 100) {
@@ -20,35 +20,26 @@ function isLista(n, l) {
 }
 
 function Adicionar() {
-    var soma = 0
-    let c = 0
-    let maior = 0
-    let menor = Infinity
+    var c = 0
     if (isNumero(num.value) && !isLista(num.value, valores)) {
+        valores.push(Number(num.value))
+        let item = document.createElement('option')
+        item.text = `Valor ${num.value} adicionado`
+        lista.appendChild(item)
         c++
-        if(maior > num.value) {
-            let maior = num.value
-        }
-        if(menor < num.value) {
-            let menor = num.value
-        }
-        var soma = soma.value + num.value
-        let valores = [num]
-        lista.innerHTML += `valor ${num} adicionado`
     } else {
         alert('Valor Inválido ou já encontrado na lista!')
     }
-    var media = soma / c
+    num.value = ''
+    num.focus()
 }
 
 function Finalizar() {
-    if(Adicionar()) {
-
+    if(valores.length == 0) {
+        alert('Adicione valores antes de finalizar!')
     } else {
-        res.innerHTML = `Ao todo, temos ${c} números cadastrados.`
-        res.innerHTML += `O maior valor informado foi ${maior}.`
-        res.innerHTML += `O menor valor informado foi ${menor}.`
-        res.innerHTML += `Somando todos os valores, temos ${soma}.`
-        res.innerHTML += `A média dos valores digitados é ${media}.`
+        let tot = valores.length
+        res.innerHTML = ''
+        res.innerHTML = `<p> Ao todo, temos ${tot} números cadastrados </p>`
     }
 }
