@@ -29,14 +29,7 @@ function Adicionar() {
         let item = document.createElement('option')
         item.text = `Valor ${num.value} adicionado`
         lista.appendChild(item)
-        c++
-        if(num.value > maior) {
-            maior = num.value
-        }
-        if(num.value < menor) {
-            menor = num.value
-        }
-        soma = soma + num.value
+        res.innerHTML = ''
     } else {
         alert('Valor Inválido ou já encontrado na lista!')
     }
@@ -49,11 +42,24 @@ function Finalizar() {
         alert('Adicione valores antes de finalizar!')
     } else {
         let tot = valores.length
+        let maior = valores[0]
+        let menor = valores[0]
+        let soma = 0
+        let média = 0
+        for(let pos in valores) {
+            soma += valores[pos]
+            if(valores[pos] > maior)
+                maior = valores[pos]
+            if(valores[pos] < menor) {
+                menor = valores[pos]
+            }
+        }
+        média = soma / tot
         res.innerHTML = ''
         res.innerHTML = `<p> Ao todo, temos ${tot- 1} números cadastrados </p>`
         res.innerHTML += `<p> O maior valor informado foi ${maior}. </p>`
         res.innerHTML += `<p> O menor valor informado foi ${menor}. </p>`
-        res.innerHTML += `<p> Somando todos os valores, temos ${Number(soma.value)}. </p>`
-        res.innerHTML += `<p> A média dos valores digitados é ${média.value} .</p>`
+        res.innerHTML += `<p> Somando todos os valores, temos ${soma}. </p>`
+        res.innerHTML += `<p> A média dos valores digitados é ${média} .</p>`
     }
 }
