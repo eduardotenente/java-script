@@ -24,7 +24,7 @@ Exiba todas as informações organizadamente no console.
 
 Regra do desafio: tente resolver tudo utilizando destructuring, evitando acessar diretamente as propriedades com cliente.nome, cliente.contato.email, etc. */
 
-function CadastrarCliente() {
+;(function CadastrarCliente(){ 
     return cliente = {
         nome: "Ana de Souza Carvalho",
         idade: 28,
@@ -37,9 +37,8 @@ function CadastrarCliente() {
             estado: "RJ"
         }
     };
-}
+})()
 
-CadastrarCliente();
 const {nome: nomeCliente, idade, pais = "Brasil"} = cliente;
 const {email: emailCliente, telefone} = cliente.contato;
 const {cidade, estado} = cliente.endereco;
