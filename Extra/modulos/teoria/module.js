@@ -1,14 +1,9 @@
-function add (a, b) {
+exports.add = function (a, b) {
     return a + b;
 };
 
-function subtract(a, b) {
+exports.greeting = "Hello"
+
+exports.subtract = function (a, b) {
     return a - b;
-};
-
-console.log("module")
-
-module.exports = {
-    add,
-    subtract
 };

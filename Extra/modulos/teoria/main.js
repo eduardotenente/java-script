@@ -1,5 +1,6 @@
 const math = require('./module.js');
 
-console.log("main")
+console.log("main");
+console.log(math.greeting);
 
-console.log(math.add(1, 2));
+console.log(math.add(1,2));
