@@ -1,0 +1,13 @@
+{
+    "nome": "Eduardo",
+    "idade": 19,
+    "estudando": true,
+    "habilidades": [
+        "JS", "HTML", "CSS"
+    ],
+    "endereço": {
+        "cidade": "Rio de Janeiro",
+        "estado": "RJ",
+        "país": "Brasil"
+    }
+}
