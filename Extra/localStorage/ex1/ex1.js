@@ -10,26 +10,36 @@ Requisitos:
 
 const nome = document.querySelector('#nome');
 const botaoSalvar = document.querySelector('#salvar-botao');
+const botaoEnviar = document.querySelector('#enviar-botao');
 const containerSalvo = document.querySelector('#container-salvo');
+const mensagem = document.querySelector('#mensagem');
+const saudacaoElemento = document.querySelector('#saudacao');
 let nomeSalvo = null;
 
+function exibirMensagem() {
+    if(localStorage.getItem('nomeSalvado')) {
+        mensagem.textContent = "Nome salvo com sucesso!";
+    } else {
+        mensagem.textContent = "Nenhum nome salvo! informe o seu nome.";
+    }
+};
+
+function saudacao() {
+    saudacaoElemento.classList.remove('escondido');
+    saudacaoElemento.textContent = `Bem-vindo(a), ${JSON.parse(localStorage.getItem('nomeSalvado'))}!`;
+};
+
 if(botaoSalvar) {
-    botaoSalvar.addEventListener('click', () => {
+    botaoSalvar.addEventListener('click', (event) => {
+        event.preventDefault();
+        saudacaoElemento.classList.add('escondido');
         nomeSalvo = localStorage.setItem('nomeSalvado', JSON.stringify(nome.value));
-        exibirMensagem()
+        exibirMensagem();
     });
 } else {
     console.error("O evento não pôde ser disparado!");
 };
 
-window.addEventListener(DOMContentLoaded, () => {
-    containerSalvo.innerHTML += `<p>Bem-vindo, ${nomeSalvo}</p>`;
+window.addEventListener('DOMContentLoaded', () => {
+    saudacao();
 });
-
-function exibirMensagem() {
-    if(nomeSalvo) {
-        containerSalvo.innerHTML = `<p>Nome salvo com sucesso!</p>`;
-    } else {
-        containerSalvo.innerHTML = `<p>Nenhum nome salvo! informe o seu nome.</p>`;
-    }
-};

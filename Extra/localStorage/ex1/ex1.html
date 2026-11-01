@@ -5,17 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Local Storage</title>
     <script src="ex1.js" defer></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 300px;
+            width: 70%;
+            margin: auto;
+            border: 1px solid black;
+            border-radius: 10px;
+            background-color: #f0f0f0;
+        }
+
+        .escondido {
+            display: none !important;
+        }
+    </style>
 </head>
 <body>
-    <form>
-        <h1>Salvar nome no Local Storage</h1>
-        <label for="nome">Nome:
-            <input type="text" name="nome" id="nome">
-        </label>
-        <input type="submit" value="Salvar nome" id="salvar-botao">
-    </form>
-    
-    <div id="container-salvo">
-    </div>
+    <main>
+        <form>
+            <h1>Salvar nome no Local Storage</h1>
+            <label for="nome">Nome:
+                <input type="text" name="nome" id="nome">
+            </label>
+            <input type="submit" value="Salvar nome" id="salvar-botao">
+            <input type="submit" value="Enviar" id="enviar-botao">
+        </form>
+        
+        <div id="container-salvo">
+            <h2 id="mensagem"></h2>
+            <p id="saudacao" class="escondido"></p>
+        </div>
+    </main>
 </body>
 </html>
