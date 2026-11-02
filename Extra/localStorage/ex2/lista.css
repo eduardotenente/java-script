@@ -66,6 +66,26 @@ main {
     transition: 0.3s;
 }
 
+li {
+    color: rgb(7, 106, 255);
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+input[type="checkbox"] {
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+        transform: scale(1.2);
+    }
+}
+
 button {
     background-color: #797777;
     color: white;
