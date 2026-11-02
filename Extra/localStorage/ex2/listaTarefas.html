@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+    <link rel="stylesheet" href="lista.css">
+    <script src="listaTarefas.js" defer></script>
+</head>
+<body>
+    <h1>Lista de Tarefas</h1>
+    <main>
+        <form id="form-adicionar-tarefa">
+            <label for="tarefa">
+                Nova Tarefa:
+            <input type="text" id="tarefa" name="tarefa">
+            </label>
+            <button type="submit" id="adicionar-tarefa">Adicionar</button>
+        </form>
+
+        <ul id="lista-tarefas">
+        </ul>
+
+        <form id="form-limpar-tarefas">
+            <button type="submit" id="limpar-tarefas">
+                Limpar Tarefas
+            </button>
+            <aside>
+                <button type="button" id="remover-tarefa">
+                    Remover Tarefa
+                </button>
+            </aside>
+        </form>
+    </main>
+</body>
+</html>
