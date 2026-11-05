@@ -1,0 +1,9 @@
+- Crie uma página que permita ao usuário alternar entre os temas claro e escuro.
+
+- Requisitos:
+    1. Desenvolva uma interface com tema claro como padrão.
+    2. Crie um botão para alternar entre o tema claro e o escuro.
+    3. Ao selecionar um tema, salve essa preferência no localStorage.
+    4. Quando a página for recarregada, mantenha o último tema selecionado.
+    5. Altere as cores do fundo, dos textos, dos botões e de outros elementos da interface.
+    6. Caso não exista uma preferência salva, utilize o tema claro.
