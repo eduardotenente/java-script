@@ -10,14 +10,14 @@ let tema = [
 ];
 
 alternarTema.addEventListener('click', () => {
-    fundoCabecalho = cabecalho.style.background = 'var(--cabeçalho-escuro)';
-    textoCabecalho = cabecalho.style.color = 'var(--texto-escuro)';
-    fundoBody = document.body.style.background = 'var(--fundo-escuro)';
-    textoBody = document.body.style.color = 'var(--texto-escuro)';
+    tema.fundoCabecalho = cabecalho.style.background = 'var(--cabeçalho-escuro)';
+    tema.textoCabecalho = cabecalho.style.color = 'var(--texto-escuro)';
+    tema.fundoBody = document.body.style.background = 'var(--fundo-escuro)';
+    tema.textoBody = document.body.style.color = 'var(--texto-escuro)';
 
-    salvarTema();
+    // salvarTema();
 });
 
-function salvarTema() {
-    localStorage.setItem(JSON.stringify(tema));
-};
+/* function salvarTema() {
+    localStorage.setItem(JSON.stringify('temaAtivo', tema));
+}*/
