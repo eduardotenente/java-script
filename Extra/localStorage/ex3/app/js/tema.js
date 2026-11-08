@@ -1,23 +1,53 @@
 const alternarTema = document.querySelector('#trocar-tema');
 const cabecalho = document.querySelector('#cabecalho');
+let temaAtual = '';
 
-let tema = [
-    fundoCabecalho = cabecalho.style.background = 'var(--cabeçalho-claro)',
-    textoCabecalho = cabecalho.style.color = 'var(--texto-claro)',
-    textoCabecalho = cabecalho.style.color = 'var(--texto-claro)',
-    fundoBody = document.body.style.background = 'var(--fundo-claro)',
-    textoBody = document.body.style.color = 'var(--texto-claro)'
-];
+function aplicarTema() {
+    document.body.classList.add('dark-mode');
+    cabecalho.classList.add('header-dark-mode');
+    temaAtual = 'escuro'
+    alternarTema.checked = true;
+};
 
-alternarTema.addEventListener('click', () => {
-    tema.fundoCabecalho = cabecalho.style.background = 'var(--cabeçalho-escuro)';
-    tema.textoCabecalho = cabecalho.style.color = 'var(--texto-escuro)';
-    tema.fundoBody = document.body.style.background = 'var(--fundo-escuro)';
-    tema.textoBody = document.body.style.color = 'var(--texto-escuro)';
+function temaPadrao() {
+    document.body.classList.remove('dark-mode');
+    cabecalho.classList.remove('header-dark-mode');
+    temaAtual = 'claro'
+    alternarTema.checked = false;
+};
 
-    // salvarTema();
+function carregarTema (temaCarregado) {
+    if (temaCarregado === 'escuro') {
+        aplicarTema();
+    } else {
+        temaPadrao();
+    }
+};
+
+window.addEventListener('DOMContentLoaded', () => {
+    const temaRecuperado = localStorage.getItem('temaAtivo');
+
+    if (temaRecuperado) {
+        carregarTema(temaRecuperado);
+    } else {
+        temaPadrao();
+    }
 });
 
-/* function salvarTema() {
-    localStorage.setItem(JSON.stringify('temaAtivo', tema));
-}*/
+alternarTema.addEventListener('change', () => {
+    if(alternarTema.checked) {
+        aplicarTema();
+    } else {
+        temaPadrao();
+    }
+
+    salvarTema();
+});
+
+function salvarTema() {
+    if (temaAtual == 'escuro') {
+        localStorage.setItem('temaAtivo', 'escuro');
+    } else if (temaAtual == 'claro') {
+        localStorage.setItem('temaAtivo', 'claro');
+    };
+};
