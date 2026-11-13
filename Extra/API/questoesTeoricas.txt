@@ -1,0 +1,96 @@
+4. Para que serve o Fetch API?
+
+Explique qual é a finalidade do método fetch() no JavaScript e em quais situações ele pode ser utilizado.
+
+R: O método fetch() tem como objetivo requisitar uma API através do parâmetro dentro da própria função predefinida, geralmente escrita como uma URL.
+Este método pode ser utilizado em funções assíncronas que necessitem de uma informação específica do backend e/ou banco de dados, assim criando uma requisição através da API, que conecta o Frontend com o servidor (Backend).
+
+
+
+
+5. Entendendo requisições HTTP
+
+Uma API disponibiliza informações de usuários por meio de uma URL.
+
+Explique a diferença entre os métodos HTTP GET e POST e apresente uma situação em que cada um deles seria utilizado.
+
+R: Método GET: pega informações específicas de uma API e devolve uma Resposta ao chamado com o código HTTP (informando se a operação foi sucedida ou não) e a informação que pedimos.
+ - Acessar sites, pesquisar algo ou pegar uma lista de produtos.
+
+Método POST: envia dados para o servidor através da API, geralmente resultando na criação ou modificação de um recurso. 
+-  Enviar um formulário de login, cadastrar um usuário ou enviar uma mensagem de contato.
+
+
+
+
+
+6. O que é uma Promise?
+
+Explique o conceito de Promise no JavaScript e quais são os seus três possíveis estados. Descreva brevemente o significado de cada um.
+
+R: Uma Promisse é uma função assíncrona que promete entregar dados futuramente, pois o método para pegar dados através de uma API demora um certo tempo.
+	1. Resolvido: é quando os dados prometidos são entregues com sucesso;
+
+	2. Rejeitado: é um estado em que os dados não foram entregues por algum motivo;
+
+	3. Pendente: Ocorre quando a promessa ainda não deu uma resposta como 	    rejeitada ou resolvida.
+
+
+
+
+
+Parte 3 — Funções assíncronas
+7. Diferença entre código síncrono e assíncrono
+
+Explique a diferença entre operações síncronas e assíncronas no JavaScript. Por que a programação assíncrona é importante no desenvolvimento web?
+
+R: Um bloco com código síncrono pausa o restante do código, mas um bloco assíncrono cria uma Promisse de dados que roda de forma isolada, sem pausar ou interromper o restante do código.
+- O uso de funções assíncronas é de suma importância por não travar o restante do código, com isso é possível continuar a executar outros comandos síncronos ao mesmo tempo. Este tipo de programação aumenta a produtividade do código e permite mais execuções simultâneamente.
+
+
+
+
+
+8. Utilizando async e await
+
+Explique a finalidade das palavras-chave async e await. Como elas ajudam a trabalhar com operações assíncronas?
+
+R: 1. async -> Transforma uma função síncrona em uma função assíncrona e informa ao JavaScript que esta função deverá ser executada de forma isolada, sem impedir o restante do código e que a resposta da função não terá um tempo de resposta instântaneo. 
+async function exemplo() {};
+
+2. await -> Geramalmente utilizado antes do comando de requisição à uma API. Ele informa ao JavaScript para pausar o código apenas dentro da função situada até obter a resposta da requisição ou baixar os dados enviados pelo servidor convertidos em .text() / .json().  
+const requisicao = await fetch('http:://api-exemplo.com');
+const resposta = await requisicao.json();
+
+
+
+
+
+Parte 4 — Tratamento de dados e erros
+9. Trabalhando com JSON
+
+Uma API retorna informações no formato JSON.
+
+Explique o que é JSON e qual é a função do método .json() quando utilizado em uma resposta do Fetch API.
+
+R: JSON -> Notação de Objetos JavaScript ou "JavaScript Object Notation" é um tipo de arquivo em que as informações são guardadas e/ou passadas dentro de um OBJETO e convertidas em STRING, ou seja, TEXTO.
+	- Método .json(): Geralmente um método associado à variável em que guardamos a requisição e salvamos dentro de uma variável resposta. Este método tem como finalidade baixar as informações recebidas da API que estão em formato JSON.
+
+
+
+
+
+
+10. Tratamento de erros em requisições
+
+Imagine que seu site realiza uma requisição utilizando fetch(), mas o servidor está indisponível.
+- O que pode acontecer com essa requisição?
+- Qual é a finalidade do bloco try...catch?
+- Como você poderia informar ao usuário que ocorreu um erro ao carregar os dados?
+
+R: 
+	1. A requisição retornará o estado da Promisse como rejeitada e irá interromper a 	execução da função.
+
+	2.  O bloco try...catch: try() tem como objetivo tentar executar um sub-bloco de 		código e caso a tentativa falhe, o sub-bloco é interrompido e o catch() é executado 		geralmente informando que ocorreu um erro. Este método evita que o código 		inteiro trave caso algo dê errado. 
+
+	3. O usuário seria informado do erro no bloco catch(), contendo o parâmetro 		"erro" dentro e executando logo em seguida uma mensagem informando que a 		requisição foi rejeitada por indisponibilidade do servidor.
