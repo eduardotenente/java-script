@@ -1,0 +1,6 @@
+Crie uma função buscarUsuarios() que consulte a API:
+
+https://jsonplaceholder.typicode.com/users
+- Utilize Fetch API.
+- Aguarde a resposta da requisição.
+- Exiba todos os usuários no console.
