@@ -1,0 +1,5 @@
+Buscar informações de um usuário
+Crie uma função buscarUsuario(id) que receba o ID de um usuário.
+- Consulte a API https://jsonplaceholder.typicode.com/users/ID.
+- Retorne o nome, e-mail e telefone do usuário.
+- Exiba os dados no console.
