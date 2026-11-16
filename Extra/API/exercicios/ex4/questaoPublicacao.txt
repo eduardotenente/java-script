@@ -1,0 +1,5 @@
+Buscar uma publicação
+Crie uma função buscarPublicacao(id) que receba um número como parâmetro.
+- Consulte https://jsonplaceholder.typicode.com/posts/ID.
+- Exiba o título e o conteúdo da publicação.
+- Caso a publicação não seja encontrada, exiba uma mensagem de erro.

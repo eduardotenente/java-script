@@ -1,0 +1,7 @@
+Listar produtos
+Crie uma função buscarProdutos() que consulte:
+
+https://fakestoreapi.com/products
+- Utilize async e await.
+- Percorra os produtos retornados.
+- Exiba o título e o preço de cada produto no console.
