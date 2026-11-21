@@ -1,0 +1,10 @@
+Controle de erros em requisições
+Crie uma função assíncrona chamada buscarDados().
+
+Requisitos:
+- Realize uma requisição para uma API pública https://fakestoreapi.com/products
+- Utilize try...catch.
+- Verifique se a resposta HTTP foi bem-sucedida.
+- Percorra os produtos retornados.
+- Exiba o título e o preço de cada produto no console.
+- Apresente uma mensagem caso ocorra algum erro.
